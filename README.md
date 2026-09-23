@@ -356,11 +356,15 @@ También facilita el seguimiento de los cambios y la organización del proyecto 
 
 ### Parte teórica
 
+### Parte teórica
+
 #### ¿Qué es un Pull Request y cuál es su función dentro de un flujo de trabajo colaborativo con Git y GitHub?
 
 Un **Pull Request** es una solicitud para integrar los cambios realizados en una rama hacia otra rama del repositorio.
 
 Su función dentro de un trabajo colaborativo es permitir que los cambios sean revisados, comentados y validados antes de integrarlos a la rama principal. De esta manera, los integrantes del proyecto pueden revisar el trabajo realizado antes de realizar el merge.
+
+---
 
 #### ¿Por qué es importante revisar un Pull Request antes de fusionarlo con la rama principal?
 
@@ -368,8 +372,52 @@ Es importante revisar un Pull Request antes de realizar el merge porque permite 
 
 La revisión también permite comprobar que los cambios cumplen con los requisitos establecidos y que el código puede integrarse de manera segura a la rama principal.
 
+---
+
+#### ¿Qué tipo de observaciones o validaciones se suelen realizar durante la revisión de un Pull Request?
+
+Durante la revisión de un Pull Request se pueden realizar diferentes validaciones, entre ellas:
+
+- Verificar que los cambios cumplan con los requisitos solicitados.
+- Revisar que el código sea claro y esté correctamente organizado.
+- Comprobar que no existan errores o conflictos con otros cambios.
+- Verificar que la funcionalidad implementada trabaje correctamente.
+- Revisar que no se agreguen archivos innecesarios o información sensible.
 
 ---
+
+### Procedimiento realizado
+
+Para desarrollar esta pregunta se trabajó sobre la rama `develop`.
+
+![Trabajo en la rama develop](images/Pregunta_4/develop.png)
+
+Primero se agregó la respuesta de la primera pregunta teórica al archivo `README.md`. Posteriormente se realizó un commit y se enviaron los cambios a la rama `develop` del repositorio remoto.
+
+![Primer commit](images/Pregunta_4/primer_commit.png)
+
+Después se creó un Pull Request desde la rama `develop` hacia la rama `main` con el nombre **"Pregunta 4 - Apellido Nombre"**.
+
+![Pull Request](images/Pregunta_4/pull_request.png)
+
+Dentro del Pull Request se realizó un comentario solicitando agregar la respuesta correspondiente a la segunda pregunta.
+
+![Comentario para segunda pregunta](images/Pregunta_4/comentario_segunda.png)
+
+Luego se agregó la segunda respuesta al `README.md`, se realizó su respectivo commit y se enviaron nuevamente los cambios a la rama `develop`.
+
+![Segundo commit](images/Pregunta_4/segundo_commit.png)
+
+Posteriormente se realizó otro comentario en el Pull Request solicitando agregar la respuesta correspondiente a la tercera pregunta.
+
+![Comentario para tercera pregunta](images/Pregunta_4/comentario_tercera.png)
+
+Finalmente se agregó la tercera respuesta y se completó la documentación de la actividad.
+
+### Pull Request
+
+- **Número del Pull Request:** #1
+- **Enlace del Pull Request:** (https://github.com/TU-USUARIO/EVALUACION1P/pull/1)
 
 ## Pregunta 5 (2 puntos)
 
