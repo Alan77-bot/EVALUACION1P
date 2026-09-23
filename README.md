@@ -238,6 +238,94 @@ De esta manera se comprobó que las reglas configuradas en el archivo `.gitignor
 
 **📝 Respuesta:**
 
+### Desarrollo de la funcionalidad `ingresar-encabezado`
+
+Para desarrollar la funcionalidad se utilizó una estructura de ramas basada en Git Flow, pero realizando el proceso manualmente mediante los comandos normales de Git.
+
+Se utilizó la rama `main` como rama principal, `develop` como rama de desarrollo y una rama `feature/ingresar-encabezado` para trabajar de forma independiente en la nueva funcionalidad.
+
+---
+
+### Comandos utilizados
+
+Los comandos utilizados desde la creación de las ramas hasta el cierre de la funcionalidad fueron:
+
+```bash
+git switch main
+git branch develop
+git switch develop
+git switch -c feature/ingresar-encabezado
+git branch
+git add README.md
+git commit -m "Pregunta 3: completar encabezado"
+git add images/Pregunta_3
+git commit -m "Pregunta 3: agregar evidencias"
+git switch develop
+git merge feature/ingresar-encabezado
+git branch -d feature/ingresar-encabezado
+git branch
+```
+
+---
+
+### Proceso seguido
+
+Primero se creó la rama `develop` a partir de la rama `main`. Esta rama se utilizó como espacio para integrar los cambios realizados durante el desarrollo.
+
+![Creación de develop](images/Pregunta_3/develop.png)
+
+Posteriormente, desde `develop`, se creó una nueva rama llamada `feature/ingresar-encabezado` mediante el siguiente comando:
+
+```bash
+git switch -c feature/ingresar-encabezado
+```
+
+Esta rama permitió trabajar en la nueva funcionalidad sin modificar directamente las ramas `main` y `develop`.
+
+![Creación de la feature](images/Pregunta_3/feature.png)
+
+Dentro de la rama `feature/ingresar-encabezado` se modificó el encabezado del archivo `README.md` completándolo con los datos personales del estudiante.
+
+![Encabezado actualizado](images/Pregunta_3/encabezado.png)
+
+Durante el desarrollo se realizaron varios commits para guardar los diferentes avances realizados.
+
+![Commits realizados](images/Pregunta_3/commits.png)
+
+Una vez terminada la funcionalidad, se regresó a la rama `develop` y se fusionaron los cambios de la feature mediante:
+
+```bash
+git switch develop
+git merge feature/ingresar-encabezado
+```
+
+Después de integrar correctamente los cambios, se eliminó la rama temporal:
+
+```bash
+git branch -d feature/ingresar-encabezado
+```
+
+De esta manera los cambios realizados durante el desarrollo quedaron integrados en la rama `develop`.
+
+![Integración de la feature](images/Pregunta_3/merge_feature.png)
+
+Finalmente se revisó el historial del repositorio para comprobar que los cambios fueron integrados correctamente.
+
+![Historial de ramas](images/Pregunta_3/historial.png)
+
+---
+
+### Ventajas de trabajar con esta estructura de ramas
+
+El uso de una estructura basada en Git Flow permite mantener organizado el desarrollo de un proyecto.
+
+La rama `main` puede mantenerse como la versión principal o estable del proyecto, mientras que `develop` permite integrar los cambios que se encuentran en desarrollo.
+
+Las ramas `feature` permiten desarrollar nuevas funcionalidades de manera independiente sin modificar directamente las ramas principales.
+
+En proyectos colaborativos, esta forma de trabajo permite que varias personas desarrollen diferentes funcionalidades al mismo tiempo y reduce el riesgo de afectar el código estable.
+
+También facilita el seguimiento de los cambios y la organización del proyecto cuando este tiene una duración prolongada.
 
 
 ## Pregunta 4 (2 puntos)
