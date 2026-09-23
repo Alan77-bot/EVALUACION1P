@@ -621,3 +621,92 @@ La solución consistió en conservar ambos contenidos dentro del archivo.
 **📝 Respuesta:**
 
 <!-- Escribe aquí tu respuesta completa a la Pregunta 6 -->
+
+### Proceso realizado
+
+Para realizar esta actividad se trabajó inicialmente sobre la rama `develop` del fork del repositorio.
+
+Primero se verificaron y eliminaron los archivos `archivoA.txt` y `archivoB.txt` generados durante las actividades anteriores.
+
+Para realizar la eliminación se utilizaron los siguientes comandos:
+
+```bash
+git switch develop
+git rm archivoA.txt
+git rm archivoB.txt
+```
+
+En caso de que alguno de los archivos no existiera, no fue necesario crearlo nuevamente, ya que el objetivo de esta actividad era realizar la limpieza de los archivos existentes.
+
+Después de eliminar los archivos se verificaron los cambios mediante:
+
+```bash
+git status
+```
+
+![Evidencia de la limpieza](images/Pregunta_6/limpieza.png)
+
+Posteriormente se registraron los cambios realizados mediante un commit.
+
+Luego se cambió a la rama `main` y se realizó la integración de los cambios provenientes de `develop` mediante:
+
+```bash
+git switch main
+git merge develop
+```
+
+De esta manera los cambios realizados durante el desarrollo quedaron integrados en la rama principal del repositorio local.
+
+Después se enviaron los cambios de la rama `main` local hacia la rama `develop` del repositorio remoto mediante:
+
+```bash
+git push origin main:develop
+```
+
+Este comando permitió actualizar la rama `develop` del fork remoto utilizando el contenido actualizado de la rama `main` local.
+
+Finalmente se enviaron al repositorio remoto todos los tags creados durante la evaluación mediante:
+
+```bash
+git push origin --tags
+```
+
+Después de actualizar el fork se creó un Pull Request desde la rama `develop` de mi fork hacia la rama `main` del repositorio original.
+
+El Pull Request se creó utilizando mi nombre y apellidos como título y en la descripción se colocó el enlace correspondiente a mi repositorio de GitHub.
+
+---
+
+### Versionamiento semántico
+
+El **versionamiento semántico** es una forma de identificar las diferentes versiones de un proyecto mediante tres números principales separados por puntos.
+
+Su estructura es:
+
+```text
+MAJOR.MINOR.PATCH
+```
+
+Por ejemplo:
+
+```text
+2.4.1
+```
+
+Los tres componentes representan:
+
+- **MAJOR:** Se incrementa cuando se realizan cambios importantes que pueden ser incompatibles con versiones anteriores.
+
+- **MINOR:** Se incrementa cuando se agregan nuevas funcionalidades manteniendo la compatibilidad con la versión anterior.
+
+- **PATCH:** Se incrementa cuando se realizan correcciones de errores o pequeños ajustes que mantienen la compatibilidad.
+
+Por ejemplo, si un proyecto tiene la versión:
+
+```text
+1.2.3
+```
+
+`1` representa la versión **MAJOR**, `2` representa la versión **MINOR** y `3` representa la versión **PATCH**.
+
+El uso del versionamiento semántico permite identificar de manera clara el tipo de cambios realizados entre diferentes versiones de un proyecto.
