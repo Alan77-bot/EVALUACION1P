@@ -147,7 +147,70 @@ Esto confirmó que el desarrollo de la Pregunta 1 se realizó en la rama `main`.
 
 **📝 Respuesta:**
 
+### Función del archivo `.gitignore`
 
+El archivo `.gitignore` permite indicar a Git qué archivos y carpetas no deben ser rastreados ni incluidos normalmente en los commits del repositorio.
+
+Para esta práctica se configuraron las siguientes reglas:
+
+```gitignore
+*.log
+temp/
+doc/*.md
+doc/*.txt
+```
+
+Las reglas configuradas permiten:
+
+- Ignorar todos los archivos con extensión `.log`.
+- Ignorar los archivos que se encuentren dentro de la carpeta `temp/`.
+- Ignorar los archivos `.md` que se encuentren dentro de la carpeta `doc/`.
+- Ignorar los archivos `.txt` que se encuentren dentro de la carpeta `doc/`.
+
+![Configuración del archivo gitignore](images/Pregunta_2/gitignore.png)
+
+---
+
+### Prueba de funcionamiento
+
+Para comprobar el funcionamiento del archivo `.gitignore` se crearon archivos de prueba dentro y fuera de la carpeta `doc/`.
+
+Los archivos utilizados fueron:
+
+```text
+prueba.md
+prueba.txt
+prueba.log
+doc/prueba.md
+doc/prueba.txt
+temp/prueba.txt
+```
+
+Los archivos `prueba.md` y `prueba.txt` ubicados fuera de la carpeta `doc/` fueron detectados normalmente por Git.
+
+En cambio, `doc/prueba.md` y `doc/prueba.txt` fueron ignorados debido a las reglas `doc/*.md` y `doc/*.txt`.
+
+El archivo `prueba.log` fue ignorado mediante la regla `*.log`.
+
+El archivo ubicado dentro de la carpeta `temp/` también fue ignorado debido a la regla `temp/`.
+
+Para comprobar qué archivos estaban siendo ignorados se utilizó:
+
+```bash
+git status --ignored --untracked-files=all
+```
+
+También se ejecutó:
+
+```bash
+git check-ignore -v prueba.log doc/prueba.md doc/prueba.txt temp/prueba.txt
+```
+
+El resultado permitió comprobar qué regla del archivo `.gitignore` estaba ignorando cada archivo.
+
+![Evidencia de archivos ignorados](images/Pregunta_2/evidencia_ignorados.png)
+
+De esta manera se comprobó que las reglas configuradas en el archivo `.gitignore` funcionan correctamente y que los archivos y carpetas indicados no están siendo rastreados por Git.
 
 ## Pregunta 3 (2 puntos)
 
