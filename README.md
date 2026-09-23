@@ -362,6 +362,13 @@ Un **Pull Request** es una solicitud para integrar los cambios realizados en una
 
 Su función dentro de un trabajo colaborativo es permitir que los cambios sean revisados, comentados y validados antes de integrarlos a la rama principal. De esta manera, los integrantes del proyecto pueden revisar el trabajo realizado antes de realizar el merge.
 
+#### ¿Por qué es importante revisar un Pull Request antes de fusionarlo con la rama principal?
+
+Es importante revisar un Pull Request antes de realizar el merge porque permite detectar errores, conflictos o cambios que podrían afectar el funcionamiento del proyecto.
+
+La revisión también permite comprobar que los cambios cumplen con los requisitos establecidos y que el código puede integrarse de manera segura a la rama principal.
+
+
 ---
 
 ## Pregunta 5 (2 puntos)
