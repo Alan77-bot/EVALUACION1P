@@ -354,7 +354,13 @@ También facilita el seguimiento de los cambios y la organización del proyecto 
 
 **📝 Respuesta:**
 
-<!-- Escribe aquí tu respuesta completa a la Pregunta 4 -->
+### Parte teórica
+
+#### ¿Qué es un Pull Request y cuál es su función dentro de un flujo de trabajo colaborativo con Git y GitHub?
+
+Un **Pull Request** es una solicitud para integrar los cambios realizados en una rama hacia otra rama del repositorio.
+
+Su función dentro de un trabajo colaborativo es permitir que los cambios sean revisados, comentados y validados antes de integrarlos a la rama principal. De esta manera, los integrantes del proyecto pueden revisar el trabajo realizado antes de realizar el merge.
 
 ---
 
