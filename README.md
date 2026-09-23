@@ -40,6 +40,92 @@
 
 **📝 Respuesta:**
 
+### Diferencia entre `git clone`, `fork` y `git pull`
+
+- **`git clone`:** Es un comando que permite copiar un repositorio remoto a nuestro equipo local para poder trabajar con sus archivos, ramas e historial.
+
+- **Fork:** Es una copia de un repositorio que se crea dentro de nuestra cuenta personal de GitHub. Permite trabajar sobre el proyecto sin modificar directamente el repositorio original.
+
+- **`git pull`:** Es un comando que permite traer los cambios más recientes del repositorio remoto y combinarlos con los cambios que tenemos en nuestro repositorio local.
+
+---
+
+### Parte práctica
+
+#### ¿Cómo se realizó el fork?
+
+Primero ingresé al repositorio original proporcionado por el docente en GitHub.
+
+Luego seleccioné la opción **Fork** y elegí mi cuenta personal de GitHub para crear una copia del repositorio.
+
+Después de completar el proceso, el repositorio apareció dentro de mi cuenta personal indicando que provenía del repositorio original.
+
+![Evidencia del Fork](images/Pregunta_1/fork.png)
+
+---
+
+#### ¿Cómo se realizó el clone del fork?
+
+Después de crear el fork, ingresé al repositorio que se encontraba en mi cuenta personal de GitHub.
+
+Seleccioné la opción **Code**, elegí **HTTPS** y copié la URL de mi fork.
+
+Posteriormente ejecuté el siguiente comando en la terminal:
+
+```bash
+git clone URL_DE_MI_FORK
+```
+
+Luego ingresé a la carpeta del repositorio utilizando:
+
+```bash
+cd EVALUACION_1P
+```
+
+De esta manera se creó una copia local de mi fork en la computadora.
+
+![Evidencia del Clone](images/Pregunta_1/clone.png)
+
+---
+
+#### ¿Cómo se verificó que se estaba trabajando sobre el fork y no sobre el repositorio original?
+
+Para verificar a qué repositorio remoto estaba conectado el proyecto ejecuté el siguiente comando:
+
+```bash
+git remote -v
+```
+
+Este comando mostró las direcciones configuradas para `fetch` y `push`.
+
+En el resultado se observó que la dirección de `origin` correspondía al repositorio ubicado en mi cuenta personal de GitHub.
+
+Por esta razón se comprobó que el repositorio local estaba conectado a mi **fork** y no directamente al repositorio original del docente.
+
+![Evidencia de verificación del Fork](images/Pregunta_1/remote.png)
+
+---
+
+#### Verificación de la rama utilizada
+
+Todo lo correspondiente a esta pregunta se realizó en la rama `main`.
+
+Para verificar la rama actual ejecuté:
+
+```bash
+git branch
+```
+
+El resultado mostró:
+
+```text
+* main
+```
+
+Esto confirmó que el desarrollo de la Pregunta 1 se realizó en la rama `main`.
+
+![Evidencia de la rama main](images/Pregunta_1/main.png)
+
 
 
 ## Pregunta 2 (1 punto)
