@@ -3,8 +3,8 @@
 ### Carrera de [INGENIERIA EN SOFTWARE]
 
 **Asignatura:** Manejo y Configuración de Software  
-**Nombre del Estudiante:** Christopher Alexander Toa Perrazo  
-**Fecha:** 08-04-2025
+**Nombre del Estudiante:** Peñaloza Peñaloza Alan Justin 
+**Fecha:** 23/09/2026
 
 ---
 
