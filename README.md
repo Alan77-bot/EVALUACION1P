@@ -356,11 +356,15 @@ También facilita el seguimiento de los cambios y la organización del proyecto 
 
 ### Parte teórica
 
+### Parte teórica
+
 #### ¿Qué es un Pull Request y cuál es su función dentro de un flujo de trabajo colaborativo con Git y GitHub?
 
 Un **Pull Request** es una solicitud para integrar los cambios realizados en una rama hacia otra rama del repositorio.
 
 Su función dentro de un trabajo colaborativo es permitir que los cambios sean revisados, comentados y validados antes de integrarlos a la rama principal. De esta manera, los integrantes del proyecto pueden revisar el trabajo realizado antes de realizar el merge.
+
+---
 
 #### ¿Por qué es importante revisar un Pull Request antes de fusionarlo con la rama principal?
 
@@ -368,8 +372,52 @@ Es importante revisar un Pull Request antes de realizar el merge porque permite 
 
 La revisión también permite comprobar que los cambios cumplen con los requisitos establecidos y que el código puede integrarse de manera segura a la rama principal.
 
+---
+
+#### ¿Qué tipo de observaciones o validaciones se suelen realizar durante la revisión de un Pull Request?
+
+Durante la revisión de un Pull Request se pueden realizar diferentes validaciones, entre ellas:
+
+- Verificar que los cambios cumplan con los requisitos solicitados.
+- Revisar que el código sea claro y esté correctamente organizado.
+- Comprobar que no existan errores o conflictos con otros cambios.
+- Verificar que la funcionalidad implementada trabaje correctamente.
+- Revisar que no se agreguen archivos innecesarios o información sensible.
 
 ---
+
+### Procedimiento realizado
+
+Para desarrollar esta pregunta se trabajó sobre la rama `develop`.
+
+![Trabajo en la rama develop](images/Pregunta_4/develop.png)
+
+Primero se agregó la respuesta de la primera pregunta teórica al archivo `README.md`. Posteriormente se realizó un commit y se enviaron los cambios a la rama `develop` del repositorio remoto.
+
+![Primer commit](images/Pregunta_4/primer_commit.png)
+
+Después se creó un Pull Request desde la rama `develop` hacia la rama `main` con el nombre **"Pregunta 4 - Apellido Nombre"**.
+
+![Pull Request](images/Pregunta_4/pull_request.png)
+
+Dentro del Pull Request se realizó un comentario solicitando agregar la respuesta correspondiente a la segunda pregunta.
+
+![Comentario para segunda pregunta](images/Pregunta_4/comentario_segunda.png)
+
+Luego se agregó la segunda respuesta al `README.md`, se realizó su respectivo commit y se enviaron nuevamente los cambios a la rama `develop`.
+
+![Segundo commit](images/Pregunta_4/segundo_commit.png)
+
+Posteriormente se realizó otro comentario en el Pull Request solicitando agregar la respuesta correspondiente a la tercera pregunta.
+
+![Comentario para tercera pregunta](images/Pregunta_4/comentario_tercera.png)
+
+Finalmente se agregó la tercera respuesta y se completó la documentación de la actividad.
+
+### Pull Request
+
+- **Número del Pull Request:** #1
+- **Enlace del Pull Request:** (https://github.com/TU-USUARIO/EVALUACION1P/pull/1)
 
 ## Pregunta 5 (2 puntos)
 
@@ -401,6 +449,152 @@ La revisión también permite comprobar que los cambios cumplen con los requisit
 **📝 Respuesta:**
 
 <!-- Escribe aquí tu respuesta completa a la Pregunta 5 -->
+
+### Resolución de conflictos entre ramas
+
+Para realizar esta práctica se trabajó a partir de la rama `develop` y se crearon dos ramas independientes llamadas `ramaA` y `ramaB`.
+
+---
+
+### Creación de las ramas
+
+Primero se creó `ramaA` a partir de `develop` mediante:
+
+```bash
+git switch develop
+git switch -c ramaA
+```
+
+Dentro de `ramaA` se creó el archivo `archivoA.txt` con el siguiente contenido:
+
+```text
+Contenido A
+```
+
+Posteriormente se realizó un commit con estos cambios.
+
+![Creación de ramaA](images/Pregunta_5/ramaA.png)
+
+Después se regresó a `develop` y se creó `ramaB`:
+
+```bash
+git switch develop
+git switch -c ramaB
+```
+
+En esta rama se creó un archivo con el mismo nombre `archivoA.txt`, pero con el contenido:
+
+```text
+Contenido B
+```
+
+Posteriormente se realizó su respectivo commit.
+
+![Creación de ramaB](images/Pregunta_5/ramaB.png)
+
+---
+
+### Generación del conflicto
+
+Para generar el conflicto se cambió nuevamente a `ramaA` y se intentó fusionar `ramaB` mediante:
+
+```bash
+git switch ramaA
+git merge ramaB
+```
+
+Git detectó que las dos ramas habían creado el mismo archivo `archivoA.txt` con contenidos diferentes, por lo que no pudo decidir automáticamente qué contenido debía conservar y generó un conflicto.
+
+![Conflicto entre ramas](images/Pregunta_5/conflicto.png)
+
+---
+
+### Resolución del conflicto
+
+El conflicto se resolvió combinando los contenidos de ambas ramas.
+
+El archivo `archivoA.txt` quedó de la siguiente manera:
+
+```text
+Contenido A
+Contenido B
+```
+
+Después se agregó nuevamente el archivo y se realizó un commit para registrar la resolución:
+
+```bash
+git add archivoA.txt
+git commit -m "Pregunta 5: resolver conflicto entre ramaA y ramaB"
+```
+
+![Conflicto resuelto](images/Pregunta_5/conflicto_resuelto.png)
+
+---
+
+### Merge hacia `develop`
+
+Una vez solucionado el conflicto se regresó a la rama `develop` y se fusionó `ramaA`:
+
+```bash
+git switch develop
+git merge ramaA
+```
+
+De esta manera los cambios de ambas ramas quedaron integrados en `develop`.
+
+![Merge hacia develop](images/Pregunta_5/merge_develop.png)
+
+---
+
+### Pull Request
+
+Después de integrar los cambios en `develop`, se enviaron al repositorio remoto y se creó un Pull Request desde la rama `develop` hacia la rama `main`.
+
+![Pull Request](images/Pregunta_5/pull_request.png)
+
+- **Número del Pull Request:** #NUMERO_PR
+- **Enlace del Pull Request:** ENLACE_PR
+
+---
+
+### Eliminación de las ramas
+
+Una vez terminado el proceso se eliminaron las ramas temporales utilizadas durante la práctica.
+
+Los comandos utilizados fueron:
+
+```bash
+git branch -d ramaA
+git branch -d ramaB
+```
+
+Después de eliminarlas se verificó que únicamente permanecieran las ramas principales del proyecto.
+
+![Ramas eliminadas](images/Pregunta_5/ramas_eliminadas.png)
+
+---
+
+### ¿Qué es un conflicto en Git y por qué ocurrió en este caso?
+
+Un **conflicto en Git** ocurre cuando Git encuentra cambios incompatibles entre dos ramas y no puede decidir automáticamente cuál de ellos debe conservar.
+
+En este caso ocurrió porque `ramaA` y `ramaB` fueron creadas desde `develop` y ambas crearon un archivo llamado `archivoA.txt`, pero cada una tenía un contenido diferente.
+
+`ramaA` contenía:
+
+```text
+Contenido A
+```
+
+Mientras que `ramaB` contenía:
+
+```text
+Contenido B
+```
+
+Al intentar fusionar `ramaB` sobre `ramaA`, Git detectó las dos versiones diferentes del mismo archivo y solicitó resolver el conflicto manualmente.
+
+La solución consistió en conservar ambos contenidos dentro del archivo.
 
 ---
 
